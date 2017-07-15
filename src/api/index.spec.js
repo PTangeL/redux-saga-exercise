@@ -16,14 +16,12 @@ const mockFetch = (data) => {
 
 
 describe('#API', () => {
-  const session = {
-    "id": "reactJSacademy"
-  }
-  beforeAll(() => {
-    mockFetch(session)
-  })
 
   it('startSession()', () => {
+    const session = {
+      "id": "reactJSacademy"
+    }
+    mockFetch(session)
     api.startSession().then((response) => {
       expect(response.data).toEqual(session)
     })
