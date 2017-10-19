@@ -5,7 +5,7 @@ import { API_BASE_URL } from '../config'
 
 Promise.polyfill()
 
-const defaultHeaders = {
+export const defaultHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Request-Method': 'POST',
   'Content-Type': 'application/json'
@@ -13,7 +13,6 @@ const defaultHeaders = {
 
 export const startSession = () => (
   fetch(`${API_BASE_URL}/public/session.json`, {
-    method: 'GET',
     headers: defaultHeaders,
   })
   .then(response => response.json())
@@ -22,7 +21,6 @@ export const startSession = () => (
 
 export const getBeers = (session) => (
   fetch(`${API_BASE_URL}/public/beers.json`, {
-    method: 'GET',
     headers: defaultHeaders,
   }).then(response => (
     response.json()
