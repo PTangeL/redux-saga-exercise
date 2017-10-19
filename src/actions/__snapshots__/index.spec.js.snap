@@ -1,16 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Returns an Action type FETCHING_BEERS 1`] = `
-Object {
-  "isFetching": Object {
-    "isFetching": true,
-  },
-  "type": "FETCHING_BEERS",
-}
-`;
-
 exports[`Returns an Action type RECEIVE_SESSION 1`] = `
 Object {
+  "payload": null,
   "session": Object {
     "id": "reactJSacademy",
   },

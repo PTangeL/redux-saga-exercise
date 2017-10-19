@@ -13,8 +13,8 @@ it(`Returns an Action type ${RECEIVE_SESSION}`, () => {
 })
 
 it(`Returns an Action type ${FETCHING_BEERS}`, () => {
-  const isFetching = {
-    isFetching: true
-  }
-  expect(fetchingBeers(isFetching)).toMatchSnapshot()
+  const isFetching = true
+  const expected = fetchingBeers(isFetching)
+  expect(expected.type).toEqual(FETCHING_BEERS)
+  expect(expected.isFetching).toEqual(true)
 })

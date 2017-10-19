@@ -20,7 +20,12 @@ describe('<Actions />', () => {
   })
 
   it('Method #componentDidMount() should call likeButton.focus()', () => {
-    //TODO implement test
+    const wrapper = mount(<Actions {...props} />)
+    const instance = wrapper.instance()
+    const likeButton = instance.likeButton
+    jest.spyOn(likeButton, 'focus')
+    instance.componentDidMount()
+    expect(likeButton.focus).toHaveBeenCalled()
   })
 
   it('should call dislike function when clicked', () => {
@@ -29,7 +34,8 @@ describe('<Actions />', () => {
   })
 
   it('should call like function when clicked', () => {
-    //TODO implement test
+    wrapper.find('button').last().simulate('click')
+    expect(like).toHaveBeenCalled()
   })
 
 })

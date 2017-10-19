@@ -9,7 +9,8 @@ export const START_SESSION = 'START_SESSION'
 
 export const receiveSession = (session) => ({
   type: RECEIVE_SESSION,
-  session
+  session,
+  payload: null
 })
 
 export const fetchingBeers = (isFetching) => ({
