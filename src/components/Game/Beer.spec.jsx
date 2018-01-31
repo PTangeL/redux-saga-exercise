@@ -10,11 +10,10 @@ describe('<Beer />', () => {
     loadingBeer: false
   }
 
-  const wrapper = shallow(
-    <Beer {...props} />
-  )
-
   it('should render with props', () => {
+    const wrapper = shallow(
+      <Beer {...props} />
+    )
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
