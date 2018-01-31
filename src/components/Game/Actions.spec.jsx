@@ -11,11 +11,10 @@ describe('<Actions />', () => {
     dislike
   }
 
-  const wrapper = shallow(
-    <Actions {...props} />
-  )
-
   it('should render with props', () => {
+    const wrapper = shallow(
+      <Actions {...props} />
+    )
     expect(shallowToJson(wrapper)).toMatchSnapshot()
   })
 
@@ -24,8 +23,11 @@ describe('<Actions />', () => {
   })
 
   it('should call dislike function when clicked', () => {
-     wrapper.find('button').first().simulate('click')
-     expect(dislike).toHaveBeenCalled()
+    const wrapper = shallow(
+      <Actions {...props} />
+    )
+    wrapper.find('button').first().simulate('click')
+    expect(dislike).toHaveBeenCalled()
   })
 
   it('should call like function when clicked', () => {
